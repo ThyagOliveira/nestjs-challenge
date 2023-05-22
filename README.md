@@ -22,52 +22,42 @@
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Description
+## Instruções gerais
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
-
-## Installation
+Para configurar o ambiente crie um arquivo .env conforme o exemplo em [.env.example](.env.example) e em seguida execute os seguintes comandos
 
 ```bash
 $ npm install
 ```
 
-## Running the app
+```bash
+$ docker-compose up
+```
 
 ```bash
-# development
-$ npm run start
-
-# watch mode
 $ npm run start:dev
-
-# production mode
-$ npm run start:prod
 ```
 
-## Test
-
+Para carregar o seed
 ```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+npx prisma db seed
 ```
 
-## Support
+### Antes de acessar e utilizar a API configure e inicialize os micro-serviços
+- [Product](https://github.com/ThyagOliveira/product-service-challenge)
+- [Cart](https://github.com/ThyagOliveira/cart-service-challenge)
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+### Para acessar a documentação da API
 
-## Stay in touch
+```
+http://localhost:3000/api
+```
+A API está protegida por autenticação JWT, efetue o login no endpoint `/api/auth/login` e use as seguintes credenciais para ter acesso ao token:
+```
+{
+  "email": "thyago@email.com",
+  "password": "123456"
+}
+```
+Use o token para autorizar o acesso e então está liberada a API
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
