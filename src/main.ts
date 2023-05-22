@@ -23,7 +23,7 @@ async function bootstrap() {
     .setTitle('Consort Group')
     .setDescription('API')
     .setVersion('1.0')
-    .addTag('API TAG')
+    .addTag('API Rest')
     .build();
 
   const document = SwaggerModule.createDocument(app, config);
