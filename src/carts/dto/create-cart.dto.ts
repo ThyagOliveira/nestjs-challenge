@@ -1,8 +1,8 @@
-import { IsArray, IsNotEmpty, IsNumber, IsString } from 'class-validator';
+import { Optional } from '@nestjs/common';
+import { IsArray, IsNotEmpty, IsNumber } from 'class-validator';
 
 export class CreateCartDto {
-  @IsNotEmpty()
-  @IsString()
+  @Optional()
   userId: string;
 
   @IsNotEmpty()
